@@ -1,2 +1,3 @@
-# Обычный бин поиск без идейно
-# Здесь еще использую медленный ввод
+https://www.youtube.com/watch?v=zu_LQbVtmhc
+
+https://www.youtube.com/watch?v=WM_CTORQkGo

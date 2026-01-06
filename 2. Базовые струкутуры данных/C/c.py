@@ -1,29 +1,30 @@
-import sys
-
+# C-Постфиксная запись
 def main():
-    n  = int(input())
+    n = input().split()
+    stack = []
+    for i in n:
+        if i == "+":
+            a1 = stack.pop()
+            a2 = stack.pop()
+            stack.append(int(a2) + int(a1))
+            continue
 
-    left = 1
-    right = n + 1
-    mid = (left + right) // 2
+        if i == "-":
+            a1 = stack.pop()
+            a2 = stack.pop()
+            stack.append(int(a2) - int(a1))
+            continue
 
-    while left < right - 1:
-        mid = (left + right) // 2
-        response = query(mid)
-        if response == "<":
-            right = mid
+        if i == "*":
+            a1 = stack.pop()
+            a2 = stack.pop()
+            stack.append(int(a2) * int(a1))
+            continue
 
-        if response == ">=":
-            left = mid
+        stack.append(i)
 
-    print(f"! {left}")
-
-
-def query(x):
-    print(x)
-    sys.stdout.flush()
-    return input()
+    return stack.pop()
 
 
 if __name__ == "__main__":
-    main()
+    print(main())
